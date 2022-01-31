@@ -5,18 +5,11 @@ using System.Text.RegularExpressions;
 namespace CoolFetch
 {
     
-    /*
-     Stuff I want:
-     Gpu - Done, run lspci | grep -i --color 'vga\|3d\|2d' and get card in [] brackets
 
-
-
-     Maybe more hardware info
-     */
 
     public static class Program
     {
-        public static bool debug = true;
+        public static bool debug = false;
         
         private static Dictionary<string, string> info = new Dictionary<string, string>()
         {
@@ -64,10 +57,10 @@ namespace CoolFetch
         private static string getGPU()
         {
             string lspciOutput = CommandRunner.runCommand("lspci | grep -i --color 'vga\\|3d\\|2d'");
-            Regex pattern = new Regex("/[(.*?)/]");
+            Regex pattern = new Regex(@"\[(.*?)\]");
             Match match = pattern.Match(lspciOutput);
 
-            return match.ToString();
+            return match.ToString().Trim(new char[]{'[', ']'});
         }
 
         private static void printResult()
