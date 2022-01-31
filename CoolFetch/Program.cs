@@ -22,7 +22,7 @@ namespace CoolFetch
             if (args.Length > 0 && args[0] == "--debug") debug = true;
             
             //Console.WriteLine(KeyValueParser.parseLines(FileReader.getFileLines("/etc/os-release")));
-            Console.WriteLine(CommandRunner.runCommand("/usr/bin/echo","echo gamer"));
+            Console.WriteLine(CommandRunner.runCommand("uname -r"));
         }
         
 

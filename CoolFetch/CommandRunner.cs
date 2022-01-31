@@ -8,13 +8,13 @@ namespace CoolFetch
     {
         private static string shell;
         
-        public static string runCommand(string programExecutable, string command)
+        public static string runCommand(string command)
         {
             if(shell == null) getShell();
             
             var psi = new ProcessStartInfo();
-            psi.FileName = programExecutable;
-            psi.Arguments = command;
+            psi.FileName = shell;
+            psi.Arguments = " -c " + '"' + command + '"';
             psi.RedirectStandardOutput = true;
             psi.UseShellExecute = false;
             psi.CreateNoWindow = true;
