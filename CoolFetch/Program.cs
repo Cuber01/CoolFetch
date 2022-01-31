@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace CoolFetch
 {
@@ -53,8 +54,31 @@ namespace CoolFetch
             
             Debug.throwInfo("Getting CPU...");
             info["CPU: "] = KeyValueParser.parseLines(FileReader.getFileLines("/proc/cpuinfo"), ':')["model name\t"];
+            
+            Debug.throwInfo("Getting GPU...");
+            info["GPU: "] = getGPU();
 
-            //Console.WriteLine(CommandRunner.runCommand("uname -r"));
+            printResult();
+        }
+
+        private static string getGPU()
+        {
+            string lspciOutput = CommandRunner.runCommand("lspci | grep -i --color 'vga\\|3d\\|2d'");
+            Regex pattern = new Regex("/[(.*?)/]");
+            Match match = pattern.Match(lspciOutput);
+
+            return match.ToString();
+        }
+
+        private static void printResult()
+        {
+            foreach (var i in info)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(i.Key);
+                Console.ResetColor();
+                Console.Write(i.Value.Trim(new char[]{'\n', '"'}) + "\n");
+            }
         }
         
 

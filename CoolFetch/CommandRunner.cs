@@ -25,13 +25,13 @@ namespace CoolFetch
 
             if (process.ExitCode == 127)
             {
-                Debug.criticalError("Failed to find " + command + " command.");
+                Debug.criticalError("Failed to find " + command + " command needed for the program.");
             } else if(process.ExitCode != 0)
             {
                 Debug.criticalError("Command " + command + " returned a non-zero exit code.");
             }
 
-            var output = process.StandardOutput.ReadToEnd();
+            string output = process.StandardOutput.ReadToEnd();
 
             return output;
         }

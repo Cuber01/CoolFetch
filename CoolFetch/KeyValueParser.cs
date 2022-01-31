@@ -41,14 +41,21 @@ namespace CoolFetch
                 
                 foreach (var c in line)
                 {
-                    if (c == separator) gettingKey = false;
-
+                    if (c == separator)
+                    {
+                        gettingKey = false;
+                        continue;
+                    }
+                    
                     if (gettingKey)
                     {
                         key.Append(c);
                     }
                     else
                     {
+                        // Ignore redundant spaces at the start of the value.
+                        if (value.Length == 0 && c == ' ') continue;
+                        
                         value.Append(c);
                     }
                     
