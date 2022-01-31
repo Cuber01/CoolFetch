@@ -1,0 +1,6 @@
+.git
+CoolFetch/bin/*
+.idea/.idea.CoolFetch/.idea/vcs.xml
+*.exe
+*.pdb
+*.dll
