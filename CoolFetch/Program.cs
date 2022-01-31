@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace CoolFetch
 {
-    
+
     public static class Program
     {
         public static bool debug = false;
@@ -64,6 +64,8 @@ namespace CoolFetch
 
         private static void printResult()
         {
+            //Console.Write("\u001b[00;1m");
+            
             string cow =
 @"\|/         (__)       
     `\------(oo)       
@@ -78,14 +80,17 @@ namespace CoolFetch
             for (int i = 0; i < info.Count; i++)
             {
                 // Print cow
+                Console.Write(Formatting.Bold);
                 Console.Write(cowLines[i]);
                 
                 // Key
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(Formatting.Bold);
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.Write(info.ElementAt(i).Key);
                 
                 // Value
-                Console.ResetColor();
+                Console.Write(Formatting.ResetEverything);
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write(info.ElementAt(i).Value.Trim(new char[]{'\n', '"'}) + "\n");
             }
             
