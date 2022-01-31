@@ -9,15 +9,25 @@ namespace CoolFetch
     
     Example:
     
+    ```
     KEY="VALUE"
     ANOTHER_KEY=VALUE
+    ```
     
     (Do note that both "VALUE" and VALUE are recognised as strings)
+    
+    Or using : instead of =
+    
+    ```
+    KEY:VALUE
+    ANOTHER_KEY:ANOTHER_VALUE
+    ```
+    
     */
     
     public class KeyValueParser
     {
-        public static Dictionary<string, string> parseLines(string[] lines)
+        public static Dictionary<string, string> parseLines(string[] lines, char separator)
         {
             
             Dictionary<string, string> keysAndValues = new Dictionary<string, string>();
@@ -31,7 +41,7 @@ namespace CoolFetch
                 
                 foreach (var c in line)
                 {
-                    if (c == '=') gettingKey = false;
+                    if (c == separator) gettingKey = false;
 
                     if (gettingKey)
                     {
@@ -43,8 +53,12 @@ namespace CoolFetch
                     }
                     
                 }
-                
-                keysAndValues.Add(key.ToString(), value.ToString());
+
+                // Ignore repeating keys.
+                if (!keysAndValues.ContainsKey(key.ToString()))
+                {
+                    keysAndValues.Add(key.ToString(), value.ToString());
+                }
                 
             }
 

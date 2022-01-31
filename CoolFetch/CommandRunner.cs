@@ -23,6 +23,14 @@ namespace CoolFetch
 
             process.WaitForExit();
 
+            if (process.ExitCode == 127)
+            {
+                Debug.criticalError("Failed to find " + command + " command.");
+            } else if(process.ExitCode != 0)
+            {
+                Debug.criticalError("Command " + command + " returned a non-zero exit code.");
+            }
+
             var output = process.StandardOutput.ReadToEnd();
 
             return output;
@@ -50,7 +58,7 @@ namespace CoolFetch
             
             if (!File.Exists("/etc/shells"))
             {
-                Debug.throwCriticalError(
+                Debug.criticalError(
                     "Could not find a valid shell.\n" +
                     "Both /bin/bash and /etc/shells are unavailable.\n"
                 );
