@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace CoolFetch
 {
     
-
-
     public static class Program
     {
         public static bool debug = false;
         
-        private static Dictionary<string, string> info = new Dictionary<string, string>()
+        private static readonly Dictionary<string, string> info = new Dictionary<string, string>()
         {
             
             {
@@ -65,13 +64,31 @@ namespace CoolFetch
 
         private static void printResult()
         {
-            foreach (var i in info)
+            string cow =
+@"\|/         (__)       
+    `\------(oo)       
+     ||     (__)       
+     ||w--||     \|/   
+\|/                    ";
+            
+            string[] cowLines = cow.Split('\n');
+
+            Console.Write('\n');
+            
+            for (int i = 0; i < info.Count; i++)
             {
+                // Print cow
+                Console.Write(cowLines[i]);
+                
+                // Key
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write(i.Key);
+                Console.Write(info.ElementAt(i).Key);
+                
+                // Value
                 Console.ResetColor();
-                Console.Write(i.Value.Trim(new char[]{'\n', '"'}) + "\n");
+                Console.Write(info.ElementAt(i).Value.Trim(new char[]{'\n', '"'}) + "\n");
             }
+            
         }
         
 
