@@ -85,6 +85,7 @@ namespace CoolFetch
                 
                 // Key
                 Console.Write(Formatting.Bold);
+                Console.Write("▶ ");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.Write(info.ElementAt(i).Key);
                 
