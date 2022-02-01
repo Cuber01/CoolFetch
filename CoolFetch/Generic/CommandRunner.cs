@@ -1,8 +1,7 @@
-using System;
 using System.Diagnostics;
 using System.IO;
 
-namespace CoolFetch
+namespace CoolFetch.Generic
 {
     public static class CommandRunner
     {

@@ -1,4 +1,4 @@
-namespace CoolFetch
+namespace CoolFetch.Generic
 {
     public static class FileReader
     {

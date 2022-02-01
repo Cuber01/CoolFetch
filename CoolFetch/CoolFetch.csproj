@@ -40,13 +40,16 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="CommandRunner.cs" />
         <Compile Include="Debug.cs" />
-        <Compile Include="FileReader.cs" />
-        <Compile Include="Formatting.cs" />
-        <Compile Include="KeyValueParser.cs" />
+        <Compile Include="Fetch.cs" />
+        <Compile Include="Generic\FileReader.cs" />
+        <Compile Include="Generic\KeyValueParser.cs" />
+        <Compile Include="Help.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Generic\CommandRunner.cs" />
+        <Compile Include="Writing\Formatting.cs" />
+        <Compile Include="Writing\Printer.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

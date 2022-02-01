@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CoolFetch
+namespace CoolFetch.Generic
 {
     /*
     Parser for noname (?) file format found commonly in the GNU/Linux system and many more.

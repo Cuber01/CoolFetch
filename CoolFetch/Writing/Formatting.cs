@@ -1,4 +1,4 @@
-namespace CoolFetch
+namespace CoolFetch.Writing
 {
     public static class Formatting
     {
