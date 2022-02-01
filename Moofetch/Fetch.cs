@@ -35,7 +35,7 @@ namespace Moofetch
         public static void run()
         {
             Debug.throwInfo("Getting OS...");
-            info["OS: "] = KeyValueParser.parseLines(FileReader.getFileLines("/etc/os-release"), '=')["PRETTY_NAME"];
+            info["OS: "] = KeyValueParser.deserialise(FileReader.getFileLines("/etc/os-release"), '=')["PRETTY_NAME"];
             
             Debug.throwInfo("Getting Kernel Version...");
             info["Kernel: "] = CommandRunner.runCommand("uname -r");
@@ -44,7 +44,7 @@ namespace Moofetch
             info["Uptime: "] = CommandRunner.runCommand("uptime -p");
             
             Debug.throwInfo("Getting CPU...");
-            info["CPU: "] = KeyValueParser.parseLines(FileReader.getFileLines("/proc/cpuinfo"), ':')["model name\t"];
+            info["CPU: "] = KeyValueParser.deserialise(FileReader.getFileLines("/proc/cpuinfo"), ':')["model name\t"];
             
             Debug.throwInfo("Getting GPU...");
             info["GPU: "] = getGPU();

@@ -14,6 +14,7 @@ namespace Moofetch
 
         public static bool debug = true;
         public static bool box = false;
+        public static bool tips = true;
 
 
         public static void Main(string[] args)
@@ -26,15 +27,53 @@ namespace Moofetch
                 Debug.throwInfo("Printing help...");
                 Help.run();
             }
-            else
+            
+            if (args.Contains("--help"))
             {
-                ConfigHandler.init();
-                Debug.throwInfo("Printing a tip...");
-                Tips.printTip();
-                Debug.throwInfo("Running fetch...");
-                Fetch.run();
+                Debug.throwInfo("Printing help...");
+                Help.run();
+
+                return;
             }
             
+            ConfigHandler.init();
+            ConfigHandler.updateConfig();
+            
+            if (args.Contains("--nocowsay"))
+            {
+                Debug.throwInfo("Disabling cow say...");
+                Tips.noCowSay();
+
+                return;
+            }
+            
+            if (args.Contains("--yescowsay"))
+            {
+                Debug.throwInfo("Enabling cow say...");
+                Tips.yesCowSay();
+
+                return;
+            }
+
+            runMain();
+
+        }
+
+        private static void runMain()
+        {
+            if (ConfigHandler.getValue("COW_SAY") == "NO")
+            {
+                tips = false;
+            }
+
+            if (tips)
+            {
+                Debug.throwInfo("Printing a tip...");
+                Tips.printTip();
+            }
+
+            Debug.throwInfo("Running fetch...");
+            Fetch.run();
         }
         
         

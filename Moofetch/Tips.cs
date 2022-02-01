@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Moofetch.Generic;
 
 namespace Moofetch
 {
@@ -10,6 +11,18 @@ namespace Moofetch
         {
             Console.Write("\n");
             Console.WriteLine("Cow says: " + tips[Program.random.Next(tips.Count)]);
+        }
+
+        public static void noCowSay()
+        {
+            ConfigHandler.setValue("COW_SAY", "NO");
+            Console.WriteLine("Done. You shmuck.");
+        }
+
+        public static void yesCowSay()
+        {
+            ConfigHandler.setValue("COW_SAY", "YES");
+            Console.WriteLine("Done. Your sins shall be forgiven, for now.");
         }
 
         private static readonly List<string> tips = new List<string>()

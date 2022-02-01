@@ -27,7 +27,7 @@ namespace Moofetch.Generic
     
     public class KeyValueParser
     {
-        public static Dictionary<string, string> parseLines(string[] lines, char separator)
+        public static Dictionary<string, string> deserialise(string[] lines, char separator)
         {
             
             Dictionary<string, string> keysAndValues = new Dictionary<string, string>();
@@ -72,6 +72,23 @@ namespace Moofetch.Generic
             return keysAndValues;
             
         }
+        
+        public static string serialise(Dictionary<string, string> keysAndValues, char separator)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (var pair in keysAndValues)
+            {
+                stringBuilder.Append(pair.Key);
+                stringBuilder.Append(separator);
+                stringBuilder.Append(pair.Value);
+                stringBuilder.Append('\n');
+            }
+
+            return stringBuilder.ToString();
+        }
+        
+        
         
     }
 }
