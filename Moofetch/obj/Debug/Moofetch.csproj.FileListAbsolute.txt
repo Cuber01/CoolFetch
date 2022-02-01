@@ -1,0 +1,6 @@
+/home/cubeq/RiderProjects/CoolFetch/Moofetch/bin/Debug/Moofetch.exe
+/home/cubeq/RiderProjects/CoolFetch/Moofetch/bin/Debug/Moofetch.pdb
+/home/cubeq/RiderProjects/CoolFetch/Moofetch/obj/Debug/Moofetch.csprojAssemblyReference.cache
+/home/cubeq/RiderProjects/CoolFetch/Moofetch/obj/Debug/Moofetch.csproj.CoreCompileInputs.cache
+/home/cubeq/RiderProjects/CoolFetch/Moofetch/obj/Debug/Moofetch.exe
+/home/cubeq/RiderProjects/CoolFetch/Moofetch/obj/Debug/Moofetch.pdb
