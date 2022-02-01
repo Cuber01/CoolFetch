@@ -4,3 +4,4 @@ CoolFetch/bin/*
 *.exe
 *.pdb
 *.dll
+CoolFetch/bin/Debug/
