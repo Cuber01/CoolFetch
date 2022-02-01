@@ -1,6 +1,0 @@
-/home/cubeq/RiderProjects/CoolFetch/CoolFetch/bin/Debug/CoolFetch.exe
-/home/cubeq/RiderProjects/CoolFetch/CoolFetch/bin/Debug/CoolFetch.pdb
-/home/cubeq/RiderProjects/CoolFetch/CoolFetch/obj/Debug/CoolFetch.csprojAssemblyReference.cache
-/home/cubeq/RiderProjects/CoolFetch/CoolFetch/obj/Debug/CoolFetch.csproj.CoreCompileInputs.cache
-/home/cubeq/RiderProjects/CoolFetch/CoolFetch/obj/Debug/CoolFetch.exe
-/home/cubeq/RiderProjects/CoolFetch/CoolFetch/obj/Debug/CoolFetch.pdb

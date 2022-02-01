@@ -1,7 +1,7 @@
 .git
-CoolFetch/bin/*
-.idea/.idea.CoolFetch/.idea/vcs.xml
+Moofetch/bin/*
+.idea/.idea.Moofetch/.idea/vcs.xml
 *.exe
 *.pdb
 *.dll
-CoolFetch/bin/Debug/
+Moofetch/bin/Debug/

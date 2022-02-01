@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Moofetch.Generic;
 
 namespace Moofetch
 {
@@ -9,9 +10,9 @@ namespace Moofetch
     public static class Program
     {
         public const string VERSION = "PRE RELEASE";
-        public static Random random = new Random();
+        public static readonly Random random = new Random();
 
-        public static bool debug = false;
+        public static bool debug = true;
         public static bool box = false;
 
 
@@ -22,10 +23,15 @@ namespace Moofetch
             
             if (args.Contains("--help"))
             {
+                Debug.throwInfo("Printing help...");
                 Help.run();
             }
             else
             {
+                ConfigHandler.init();
+                Debug.throwInfo("Printing a tip...");
+                Tips.printTip();
+                Debug.throwInfo("Running fetch...");
                 Fetch.run();
             }
             

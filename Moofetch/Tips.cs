@@ -8,6 +8,7 @@ namespace Moofetch
         
         public static void printTip()
         {
+            Console.Write("\n");
             Console.WriteLine("Cow says: " + tips[Program.random.Next(tips.Count)]);
         }
 
@@ -23,12 +24,12 @@ namespace Moofetch
             "What you're referring to as Linux, is in fact, GMOO/Limoox.",
             "This grass isn't even green!",
             "Which one is your favourite: A, B or C?",
-            "My words of advice are always useful.",
+            "My words of advice are always worth listening.",
             "Use --help when you're lost.",
             "Eat healthy foods. Like grass.",
             "Remember young programmers, USSR history books is the only database you need",
             "Hello, I am about to eat your flower and keck your asz.",
-            "You can turn this off with --nocowsay. But why would you?",
+            "You can turn this dialog off with --nocowsay. But why would you?",
             "Do you happen to have apt? My colleague works there.",
             "My favorite utility program is cowsay. It lets me express myself.",
             "If you have any problems or suggestions, why don't you contact us at our link from --help?",

@@ -42,6 +42,7 @@
     <ItemGroup>
         <Compile Include="Debug.cs" />
         <Compile Include="Fetch.cs" />
+        <Compile Include="Generic\ConfigHandler.cs" />
         <Compile Include="Generic\FileReader.cs" />
         <Compile Include="Generic\KeyValueParser.cs" />
         <Compile Include="Help.cs" />

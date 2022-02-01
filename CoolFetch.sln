@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolFetch", "CoolFetch\CoolFetch.csproj", "{DE8EC723-D4C2-45B0-8320-948D883C3029}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moofetch", "Moofetch\Moofetch.csproj", "{DE8EC723-D4C2-45B0-8320-948D883C3029}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
