@@ -9,7 +9,8 @@ namespace CoolFetch
     public static class Program
     {
         public const string VERSION = "PRE RELEASE";
-            
+        public static Random random = new Random();
+
         public static bool debug = false;
         public static bool box = false;
 

@@ -23,7 +23,8 @@ namespace CoolFetch.Writing
         private const char rightUpCorner = '╮'; 
         private const char leftDownCorner = '╰';
         private const char rightDownCorner = '╯';
-
+        
+        
         public static void printResult(Dictionary<string, string> info)
         {
             int boxWidth = 0;
@@ -40,8 +41,10 @@ namespace CoolFetch.Writing
                 printBoxHorizontalLine(boxWidth, leftUpCorner, rightUpCorner);
     
                 // Print a |  | in an emopty line
-                Console.Write("\n" + verticalLine + String.Concat(Enumerable.Repeat(" ", boxWidth+boxOffset-1)) + verticalLine + "\n");
+                Console.Write("\n" + verticalLine + String.Concat(Enumerable.Repeat(" ", boxWidth+boxOffset-1)) + verticalLine);
             }
+            
+            Console.Write("\n");
 
             for (int i = 0; i < info.Count; i++)
             {
