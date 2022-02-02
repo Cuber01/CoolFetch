@@ -8,3 +8,4 @@ Moofetch/bin/*
 Moofetch/obj/*
 flatpak/moofetch
 flatpak/build-dir
+flatpak/.flatpak-builder/*
