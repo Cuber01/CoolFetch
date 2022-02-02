@@ -4,4 +4,4 @@ Moofetch/bin/*
 *.exe
 *.pdb
 *.dll
-Moofetch/bin/Debug/
+Moofetch/bin/*
