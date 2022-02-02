@@ -12,7 +12,7 @@ namespace Moofetch
         public const string VERSION = "PRE RELEASE";
         public static readonly Random random = new Random();
 
-        public static bool debug = true;
+        public static bool debug = false;
         public static bool box = false;
         public static bool tips = true;
 
