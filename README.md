@@ -32,6 +32,7 @@ To display the cow in a box: ``moofetch --box``
 ```sh
 git clone https://github.com/Cuber01/Moofetch # clone the repo
 cd Moofetch # go into repo folder
+nuget restore # restore packages
 msbuild . # build
 ```
 

@@ -5,3 +5,4 @@ Moofetch/bin/*
 *.pdb
 *.dll
 Moofetch/bin/*
+Moofetch/obj/*
