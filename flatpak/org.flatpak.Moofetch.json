@@ -1,0 +1,22 @@
+{
+  "app-id": "org.flatpak.Moofetch",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "21.08",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "moofetch",
+  "modules": [
+    {
+      "name": "moofetch",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -D moofetch /app/bin/moofetch"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "moofetch"
+        }
+      ]
+    }
+  ]
+}

@@ -36,6 +36,13 @@ nuget restore # restore packages
 msbuild . # build
 ```
 
+### Building a self-contained executable
+
+```sh
+dotnet tool install -g dotnet-warp
+dotnet-warp
+```
+
 ## Contributing, Goals and Future
 
 If you'd like to contribute, feel free to hit me up with an Issue or a Pull Request.

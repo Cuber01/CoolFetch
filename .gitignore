@@ -6,3 +6,4 @@ Moofetch/bin/*
 *.dll
 Moofetch/bin/*
 Moofetch/obj/*
+flatpak/moofetch

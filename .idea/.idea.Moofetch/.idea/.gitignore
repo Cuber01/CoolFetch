@@ -2,10 +2,10 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
-/projectSettingsUpdater.xml
 /contentModel.xml
-/.idea.Moofetch.iml
 /modules.xml
+/projectSettingsUpdater.xml
+/.idea.Moofetch.iml
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
