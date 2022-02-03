@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using Moofetch.Generic;
 
 namespace Moofetch
@@ -14,7 +12,7 @@ namespace Moofetch
 
         public static bool debug = false;
         public static bool box = false;
-        public static bool tips = true;
+        private static bool tips = true;
 
 
         public static void Main(string[] args)

@@ -18,5 +18,9 @@
         }
       ]
     }
+  ],
+
+  "finish-args": [
+    "--filesystem=host"
   ]
 }

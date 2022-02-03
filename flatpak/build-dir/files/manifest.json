@@ -20,5 +20,8 @@
         "install -D moofetch /app/bin/moofetch"
       ]
     }
+  ],
+  "finish-args" : [
+    "--filesystem=host"
   ]
 }
