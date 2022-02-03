@@ -6,7 +6,12 @@ Moofetch/bin/*
 *.dll
 Moofetch/bin/*
 Moofetch/obj/*
-flatpak/moofetch/*
-flatpak/build-dir/*
-flatpak/.flatpak-builder/*
-flatpak/repo/*
+builds/flatpak_building/moofetch/*
+builds/flatpak_building/build-dir/*
+builds/flatpak_building/.flatpak-builder/*
+builds/flatpak_building/repo/*
+builds/flatpak_building/moofetch.flatpak
+builds/Moofetch-v1.0-Executable.zip
+builds/Moofetch-v1.0-Flatpak.zip
+builds/Moofetch-v1.0-Executable/moofetch
+builds/Moofetch-v1.0-Flatpak/moofetch.flatpak
