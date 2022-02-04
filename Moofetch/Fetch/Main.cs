@@ -3,29 +3,28 @@ using System.Text.RegularExpressions;
 using Moofetch.Generic;
 using Moofetch.Writing;
 
-namespace Moofetch
+namespace Moofetch.Fetch
 {
-    public static class Fetch
+    public static class Main
     {
-        
-        
+
         private static readonly Dictionary<string, string> info = new Dictionary<string, string>()
         {
             
             {
-                "OS: ", "Unknown."
+                "OS: ", ""
             },
             {
-                "Kernel: ", "Unknown."
+                "Kernel: ", ""
             },
             {
-                "Uptime: ", "Unknown."
+                "Uptime: ", ""
             },
             {
-                "CPU: ", "Unknown."
+                "CPU: ", ""
             },
             {
-                "GPU: ", "Unknown."
+                "GPU: ", ""
             }
             
         };

@@ -71,7 +71,7 @@ namespace Moofetch
             }
 
             Debug.throwInfo("Running fetch...");
-            Fetch.run();
+            Fetch.Main.run();
         }
         
         
