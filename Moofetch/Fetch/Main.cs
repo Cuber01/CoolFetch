@@ -49,9 +49,9 @@ namespace Moofetch.Fetch
             Printer.printResult(info);
         }
         
-        private static string getGPU()
+        public static string getGPU()
         {
-            string lspciOutput = CommandRunner.runCommand("lspci | grep -i --color 'vga\\|3d\\|2d'");
+            string lspciOutput = CommandRunner.runCommand("lshw -C video");
             Regex pattern = new Regex(@"\[(.*?)\]");
             Match match = pattern.Match(lspciOutput);
 

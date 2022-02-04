@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using Moofetch.Generic;
 
@@ -16,34 +17,36 @@ namespace Moofetch.Fetch
                 "Vendor: ", ""
             },
             {
-                "Architecture: ", ""
+                "Clock: ", ""
             },
             {
-                "Op-modes: ", ""
-            },
-            {
-                "Cores: ", ""
-            },
-            {
-                "Threads per core: ", ""
+                "Width: ", ""
             }
             
         };
         
         public void getFullGPU()
         {
-            Debug.throwInfo("Gathering GPU info from lsGPU...");
+            Debug.throwInfo("Gathering GPU info from lshw...");
 
-            Dictionary<string, string> lsGPU = KeyValueParser.deserialise(CommandRunner.runCommand("lsGPU").Split('\n'), ':'); 
+            string lshw = CommandRunner.runCommand("lshw -C video");
+
+            Debug.throwInfo("Deserialising lshw output...")
+
+            Regex pattern = new Regex("(?<=\*-display                 \n)(?s)(.*)(?=WARNING)");
+            Match match = pattern.Match(lshw);
+
+            string[] lshwCleaned =  match.ToString().Split('\n');
+            
+            Dictionary<string, string> lshwDeserialised = KeyValueParser.deserialise(lshwCleaned, ':'); 
 
             Debug.throwInfo("Assigning GPU info...");
 
-            GPUInfo["Name: "] =             lsGPU["Model name"];
-            GPUInfo["Vendor: "] =           lsGPU["Vendor ID"];
-            GPUInfo["Architecture: "] =     lsGPU["Architecture"];
-            GPUInfo["Op-modes: "] =         lsGPU["GPU op-mode(s)"];
-            GPUInfo["Cores: "] =            lsGPU["GPU(s)"];
-            GPUInfo["Threads per core: "] = lscpu["Thread(s) per core"];
+            GPUInfo["Name: "] =             Main.getGPU();
+            GPUInfo["Vendor: "] =           lshwDeserialised["       vendor"];
+            GPUInfo["Clock: "] =            lshwDeserialised["       clock"];
+            GPUInfo["Width: "] =            lshwDeserialised["       width"];
+
         }
     }
 }
