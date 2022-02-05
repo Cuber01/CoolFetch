@@ -4,7 +4,7 @@ using Moofetch.Generic;
 
 namespace Moofetch.Fetch
 {
-    public class CPU
+    public static class CPU
     {
         private static readonly Dictionary<string, string> CPUInfo = new Dictionary<string, string>()
         {
@@ -30,7 +30,7 @@ namespace Moofetch.Fetch
             
         };
         
-        public void getFullCPU()
+        public static void run()
         {
             Debug.throwInfo("Gathering CPU info from lscpu...");
 

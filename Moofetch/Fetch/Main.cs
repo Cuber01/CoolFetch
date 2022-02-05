@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Moofetch.Generic;
+using Moofetch.Fetch;
 using Moofetch.Writing;
 
 namespace Moofetch.Fetch
@@ -31,22 +32,23 @@ namespace Moofetch.Fetch
         
         public static void run()
         {
-            Debug.throwInfo("Getting OS...");
-            info["OS: "] = KeyValueParser.deserialise(FileReader.getFileLines("/etc/os-release"), '=')["PRETTY_NAME"];
+            GPU.run();
+            // Debug.throwInfo("Getting OS...");
+            // info["OS: "] = KeyValueParser.deserialise(FileReader.getFileLines("/etc/os-release"), '=')["PRETTY_NAME"];
             
-            Debug.throwInfo("Getting Kernel Version...");
-            info["Kernel: "] = CommandRunner.runCommand("uname -r");
+            // Debug.throwInfo("Getting Kernel Version...");
+            // info["Kernel: "] = CommandRunner.runCommand("uname -r");
             
-            Debug.throwInfo("Getting Uptime...");
-            info["Uptime: "] = CommandRunner.runCommand("uptime -p");
+            // Debug.throwInfo("Getting Uptime...");
+            // info["Uptime: "] = CommandRunner.runCommand("uptime -p");
             
-            Debug.throwInfo("Getting CPU...");
-            info["CPU: "] = KeyValueParser.deserialise(FileReader.getFileLines("/proc/cpuinfo"), ':')["model name\t"];
+            // Debug.throwInfo("Getting CPU...");
+            // info["CPU: "] = KeyValueParser.deserialise(FileReader.getFileLines("/proc/cpuinfo"), ':')["model name\t"];
             
-            Debug.throwInfo("Getting GPU...");
-            info["GPU: "] = getGPU();
+            // Debug.throwInfo("Getting GPU...");
+            // info["GPU: "] = getGPU();
 
-            Printer.printResult(info);
+            // Printer.printResult(info);
         }
         
         public static string getGPU()

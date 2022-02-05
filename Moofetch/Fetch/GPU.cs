@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using Moofetch.Generic;
@@ -5,7 +7,7 @@ using Moofetch.Generic;
 
 namespace Moofetch.Fetch
 {
-    public class GPU
+    public static class GPU
     {
         private static readonly Dictionary<string, string> GPUInfo = new Dictionary<string, string>()
         {
@@ -25,19 +27,16 @@ namespace Moofetch.Fetch
             
         };
         
-        public void getFullGPU()
+        public static void run()
         {
             Debug.throwInfo("Gathering GPU info from lshw...");
 
             string lshw = CommandRunner.runCommand("lshw -C video");
 
-            Debug.throwInfo("Deserialising lshw output...")
+            Debug.throwInfo("Deserialising lshw output...");
 
-            Regex pattern = new Regex("(?<=\*-display                 \n)(?s)(.*)(?=WARNING)");
-            Match match = pattern.Match(lshw);
+            string[] lshwCleaned = lshw.Split('\n').Skip(1).ToArray();
 
-            string[] lshwCleaned =  match.ToString().Split('\n');
-            
             Dictionary<string, string> lshwDeserialised = KeyValueParser.deserialise(lshwCleaned, ':'); 
 
             Debug.throwInfo("Assigning GPU info...");
