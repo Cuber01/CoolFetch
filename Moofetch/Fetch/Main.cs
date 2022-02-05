@@ -32,7 +32,9 @@ namespace Moofetch.Fetch
         
         public static void run()
         {
-            GPU.run();
+            //GPU.run();
+
+            CPU.run();
             // Debug.throwInfo("Getting OS...");
             // info["OS: "] = KeyValueParser.deserialise(FileReader.getFileLines("/etc/os-release"), '=')["PRETTY_NAME"];
             
