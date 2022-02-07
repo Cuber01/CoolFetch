@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Moofetch.Generic;
+using Moofetch.Fetch;
 
 namespace Moofetch
 {
@@ -24,16 +25,10 @@ namespace Moofetch
             {
                 Debug.throwInfo("Printing help...");
                 Help.run();
-            }
-            
-            if (args.Contains("--help"))
-            {
-                Debug.throwInfo("Printing help...");
-                Help.run();
 
                 return;
             }
-            
+         
             ConfigHandler.init();
             ConfigHandler.updateConfig();
             
@@ -52,6 +47,21 @@ namespace Moofetch
 
                 return;
             }
+
+            if(args.Contains("--cpu"))
+            {
+                CPU.run();
+                
+                return;
+            }
+
+            if(args.Contains("--gpu"))
+            {
+                GPU.run();
+
+                return;
+            }
+
 
             runMain();
 

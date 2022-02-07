@@ -1,6 +1,6 @@
+using System.Runtime.InteropServices;
 using System.Linq;
-using System.Xml.Linq;
-using System.Text.RegularExpressions;
+using Moofetch.Writing;
 using System.Collections.Generic;
 using Moofetch.Generic;
 
@@ -45,6 +45,8 @@ namespace Moofetch.Fetch
             GPUInfo["Vendor: "] =           lshwDeserialised["       vendor"];
             GPUInfo["Clock: "] =            lshwDeserialised["       clock"];
             GPUInfo["Width: "] =            lshwDeserialised["       width"];
+
+            Printer.printResult(GPUInfo);
 
         }
     }

@@ -32,25 +32,22 @@ namespace Moofetch.Fetch
         
         public static void run()
         {
-            //GPU.run();
+            Debug.throwInfo("Getting OS...");
+            info["OS: "] = KeyValueParser.deserialise(FileReader.getFileLines("/etc/os-release"), '=')["PRETTY_NAME"];
+            
+            Debug.throwInfo("Getting Kernel Version...");
+            info["Kernel: "] = CommandRunner.runCommand("uname -r");
+            
+            Debug.throwInfo("Getting Uptime...");
+            info["Uptime: "] = CommandRunner.runCommand("uptime -p");
+            
+            Debug.throwInfo("Getting CPU...");
+            info["CPU: "] = KeyValueParser.deserialise(FileReader.getFileLines("/proc/cpuinfo"), ':')["model name\t"];
+            
+            Debug.throwInfo("Getting GPU...");
+            info["GPU: "] = getGPU();
 
-            CPU.run();
-            // Debug.throwInfo("Getting OS...");
-            // info["OS: "] = KeyValueParser.deserialise(FileReader.getFileLines("/etc/os-release"), '=')["PRETTY_NAME"];
-            
-            // Debug.throwInfo("Getting Kernel Version...");
-            // info["Kernel: "] = CommandRunner.runCommand("uname -r");
-            
-            // Debug.throwInfo("Getting Uptime...");
-            // info["Uptime: "] = CommandRunner.runCommand("uptime -p");
-            
-            // Debug.throwInfo("Getting CPU...");
-            // info["CPU: "] = KeyValueParser.deserialise(FileReader.getFileLines("/proc/cpuinfo"), ':')["model name\t"];
-            
-            // Debug.throwInfo("Getting GPU...");
-            // info["GPU: "] = getGPU();
-
-            // Printer.printResult(info);
+            Printer.printResult(info);
         }
         
         public static string getGPU()

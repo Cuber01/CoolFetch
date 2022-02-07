@@ -1,5 +1,7 @@
+using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using Moofetch.Generic;
+using Moofetch.Writing;
 
 
 namespace Moofetch.Fetch
@@ -44,6 +46,8 @@ namespace Moofetch.Fetch
             CPUInfo["Op-modes: "] =         lscpu["CPU op-mode(s)"];
             CPUInfo["Cores: "] =            lscpu["CPU(s)"];
             CPUInfo["Threads per core: "] = lscpu["Thread(s) per core"];
+
+            Printer.printResult(CPUInfo);
         }
     }
 }

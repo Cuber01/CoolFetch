@@ -55,12 +55,24 @@ namespace Moofetch.Writing
                 {
                     lineLength = boxOffset + cowLines[i].Length + bulletPoint.Length + fancyKey.Length + fancyValue.Length;
                     spacesNeeded = boxWidth + boxOffset - lineLength - 1;
+
+                    if(spacesNeeded < 0)
+                    {
+                        spacesNeeded = 0;
+                    }
                     
                     Console.Write(verticalLine + String.Concat(Enumerable.Repeat(" ", boxOffset)));  // Wall of box
                 }
                 
-                Console.Write(Formatting.Bold);  
-                Console.Write(cowLines[i]); // Cow
+                Console.Write(Formatting.Bold); 
+
+                if(i <= cowLines.Length -1)
+                {
+                    Console.Write(cowLines[i]); // Cow
+                } else
+                {
+                    Console.Write(String.Concat(Enumerable.Repeat(" ", cowLines[0].Length)));
+                }
                 
                 Console.Write(Formatting.Bold);
                 Console.Write(bulletPoint); // Bullet point
@@ -86,7 +98,7 @@ namespace Moofetch.Writing
             {
                 Console.Write(Formatting.ResetEverything);
             
-                // Print a | | in an emopty line
+                // Print a | | in an empty line
                 Console.Write(verticalLine + String.Concat(Enumerable.Repeat(" ", boxWidth+boxOffset-1)) + verticalLine + "\n");
             
                 // Print floor
