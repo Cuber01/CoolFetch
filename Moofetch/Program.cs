@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.IO;
+using System;
 using System.Linq;
 using Moofetch.Generic;
 using Moofetch.Fetch;
@@ -15,6 +16,7 @@ namespace Moofetch
         public static bool box = false;
         private static bool tips = true;
 
+        public static TextWriter mainWriter = Console.Out;
 
         public static void Main(string[] args)
         {

@@ -1,8 +1,10 @@
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Linq;
 using Moofetch.Writing;
 using System.Collections.Generic;
 using Moofetch.Generic;
+using System;
 
 
 namespace Moofetch.Fetch
@@ -31,7 +33,7 @@ namespace Moofetch.Fetch
         {
             Debug.throwInfo("Gathering GPU info from lshw...");
 
-            string lshw = CommandRunner.runCommand("lshw -C video");
+            string lshw = CommandRunner.runCommand("lshw -C video 2> /dev/null"); // Redirect stderr to null
 
             Debug.throwInfo("Deserialising lshw output...");
 

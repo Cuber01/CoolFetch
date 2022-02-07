@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Moofetch.Generic;
-using Moofetch.Fetch;
 using Moofetch.Writing;
+using System;
+using System.IO;
+
 
 namespace Moofetch.Fetch
 {
@@ -52,7 +54,7 @@ namespace Moofetch.Fetch
         
         public static string getGPU()
         {
-            string lspciOutput = CommandRunner.runCommand("lshw -C video");
+            string lspciOutput = CommandRunner.runCommand("lshw -C video 2> /dev/null"); // Redirect stderr to null
             Regex pattern = new Regex(@"\[(.*?)\]");
             Match match = pattern.Match(lspciOutput);
 
