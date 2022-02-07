@@ -53,7 +53,8 @@ namespace Moofetch.Writing
 
                 if(Program.box) 
                 {
-                    lineLength = boxOffset + cowLines[i].Length + bulletPoint.Length + fancyKey.Length + fancyValue.Length;
+
+                    lineLength = boxOffset + cowLines[0].Length + bulletPoint.Length + fancyKey.Length + fancyValue.Length;
                     spacesNeeded = boxWidth + boxOffset - lineLength - 1;
 
                     if(spacesNeeded < 0)
