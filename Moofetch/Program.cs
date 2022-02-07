@@ -9,7 +9,7 @@ namespace Moofetch
 
     public static class Program
     {
-        public const string VERSION = "PRE RELEASE";
+        public const string VERSION = "2.0";
         public static readonly Random random = new Random();
 
         public static bool debug = false;

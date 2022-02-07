@@ -18,6 +18,8 @@ namespace Moofetch
             Console.Write("\n");
             Console.WriteLine("Flags:");
             Console.WriteLine("    --help         Display this help message");
+            Console.WriteLine("    --cpu          Display cpu information");
+            Console.WriteLine("    --gpu          Display gpu information");
             Console.WriteLine("    --debug        Print debug information");
             Console.WriteLine("    --box          Display fetch message in a box");
             Console.WriteLine("    --nocowsay     Turn off Cow says messages. You monster.");

@@ -1,4 +1,4 @@
-# Moofetch
+# Moofetch 2.0
 
 Moofetch is a small CLI tool written in C#.
 It's purpose is to get a limited amount of information about your system and hardware in one place.
@@ -48,6 +48,10 @@ To display the cow in a box: ``moofetch --box``
 
 ![](/readme_img/cow_box.png)
 
+To display additional cpu info: ``moofetch --cpu``
+
+To display additional gpu info: ``moofetch --gpu``
+
 ## Dependencies and support
 
 ### Support
@@ -69,6 +73,7 @@ Only standard packages need to be installed, so unless you have some little mons
 - whoami
 - uptime
 - lspci
+- lshw
 - grep
 - bash (if you run install scripts with other bash-like shell/install it manually you're fine, so it's not a hard dependency)
 - any CLI shell
